@@ -1,0 +1,22 @@
+cookbooks:
+- apps:
+- apps-ruby:
+- chef_handler:
+- minitest-handler:
+- users:
+
+roles:
+- standalone:
+
+data bags:
+- apps:
+  - princess
+  - toad
+  - www
+- users:
+  - johndoe
+
+nodes:
+- ec2 1:
+  - recipe[minitest-handler] role[standalone]
+  - --no-host-key-verify -x ubuntu -G default -I ami-3c994355 -f c1.medium -d chef-full --region us-east-1

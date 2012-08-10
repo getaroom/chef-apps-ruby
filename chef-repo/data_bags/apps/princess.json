@@ -1,0 +1,11 @@
+{
+  "id": "princess",
+  "owner": "princess",
+  "group": "princess",
+  "deploy_to": "/srv/princess",
+  "server_roles": ["princess"],
+  "ingredients": {
+    "princess": [".ruby-version"]
+  },
+  "ruby_version": "1.9.3-p125"
+}
