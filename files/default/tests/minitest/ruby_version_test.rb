@@ -18,8 +18,8 @@ describe_recipe "apps-ruby::ruby_version" do
       assert_equal app_group.gid, stat.gid
     end
 
-    it "is mode 660" do
-      assert_equal "660".oct, (stat.mode & 007777)
+    it "can be read by everyone but written to only by the user and group" do
+      assert_equal "664".oct, (stat.mode & 007777)
     end
 
     it "specifies the configured ruby version" do

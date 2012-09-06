@@ -30,7 +30,7 @@ search :apps do |app|
       file "#{app['deploy_to']}/shared/.ruby-version" do
         owner app['owner']
         group app['group']
-        mode "660"
+        mode "664"
         content app['ruby_version']
       end
     end
